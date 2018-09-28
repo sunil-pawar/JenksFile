@@ -1,4 +1,4 @@
-/*properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])])*/
+/* properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) */
 
 pipeline {
      
