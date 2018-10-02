@@ -2,7 +2,7 @@
 
 pipeline {
      agent any
- options{parameters{string(defaultValue: '', description: '', name: 'RMNumber', trim: false)}}
+ parameters{string(defaultValue: '', description: '', name: 'RMNumber', trim: false)}
 stages {
    stage('Build'){
         steps{
