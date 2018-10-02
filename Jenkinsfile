@@ -1,8 +1,8 @@
- properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) 
+ 
 
 pipeline {
      agent any
-    
+    properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) 
 stages {
    stage('Build'){
         steps{
