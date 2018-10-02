@@ -1,4 +1,4 @@
-/* properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) */
+ properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) 
 
 pipeline {
      agent any
@@ -33,9 +33,11 @@ stage('Deploy'){
           }
      }
 }
-    /*stage('Version'){
+    stage('Version')
+     {
+          steps{
        echo "the RM number to be versioned is: ${params.RMNumber}"
-        
-    }*/
+          }
+    }
 }
 }
