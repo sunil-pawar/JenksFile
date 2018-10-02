@@ -5,9 +5,13 @@ pipeline {
     
 stages {
    stage('Build'){
-fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
+        steps{
+              echo "copying files"
+             fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
+        }
    }
 stage('Deploy'){
+     steps{
             def lst = []
             def count = new File("D:/Test1/").listFiles().size()
             if (count>0){
@@ -21,7 +25,7 @@ stage('Deploy'){
                         }
              else
              {println("there arenumber of files to be deployed" +count)}
-
+     }
 }
     /*stage('Version'){
        echo "the RM number to be versioned is: ${params.RMNumber}"
