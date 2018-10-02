@@ -1,9 +1,9 @@
 /* properties([parameters([string(defaultValue: '', description: '', name: 'RMNumber', trim: false)])]) */
 
 pipeline {
-     
+     agent any
     
-dir('D:\\Test') {
+stages {
    stage('Build'){
 fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
    }
