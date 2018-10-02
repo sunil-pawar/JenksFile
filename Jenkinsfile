@@ -12,7 +12,8 @@ stages {
         }
    }
 stage('Deploy'){
-     script{
+     steps{
+          script{
             def lst = []
             def count = new File("D:/Test1/").listFiles().size()
             if (count>0){
@@ -26,6 +27,7 @@ stage('Deploy'){
                         }
              else
              {println("there arenumber of files to be deployed" +count)}
+     }
      }
 }
     /*stage('Version'){
