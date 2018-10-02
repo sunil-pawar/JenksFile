@@ -6,8 +6,8 @@ pipeline {
 stages {
    stage('Build'){
         steps{
-             script{
-                  dir('D:\\Test')
+             
+             dir('D:\\Test'){
               echo "copying files"
              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
              }
