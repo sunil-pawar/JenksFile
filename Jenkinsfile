@@ -6,9 +6,11 @@ pipeline {
 stages {
    stage('Build'){
         steps{
-             dir('D:\\Test')
+             script{
+                  dir('D:\\Test')
               echo "copying files"
              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
+             }
         }
    }
 stage('Deploy'){
