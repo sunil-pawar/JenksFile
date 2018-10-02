@@ -6,12 +6,13 @@ pipeline {
 stages {
    stage('Build'){
         steps{
+             dir('D:\\Test')
               echo "copying files"
              fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '*.json', targetLocation: 'D:\\Test1')])
         }
    }
 stage('Deploy'){
-     steps{
+     script{
             def lst = []
             def count = new File("D:/Test1/").listFiles().size()
             if (count>0){
